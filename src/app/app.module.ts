@@ -42,11 +42,13 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { CvNotSubmittedComponent } from './cv-not-submitted/cv-not-submitted.component';
 //////angular material Import End
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CvNotSubmittedComponent
   ],
   imports: [
     BrowserModule,

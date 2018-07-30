@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { auth } from 'firebase';
+import * as firebase from 'firebase/app';
+import {MatSidenav} from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -9,19 +11,23 @@ import { auth } from 'firebase';
 })
 export class AppComponent {
 
-  authenticated: boolean = false;
+  @ViewChild('sidenav') sidenav: MatSidenav;
+
+  authenticated: boolean = true;
 
   constructor(public afAuth: AngularFireAuth){
-
+    this.afAuth.authState.subscribe(auth => {
+      if(auth){
+        this.authenticated = true;
+      }else{
+        this.authenticated = false;
+      }
+    })
   }
 
   ngOnInit(){
-    if(this.afAuth.user._isScalar != false){
-      this.authenticated = true;
-    }else{
-      this.authenticated = false;
-    } 
-    console.log(this.afAuth.user._isScalar);
+    console.log(this.afAuth.auth.currentUser);
+    console.log(this.afAuth.authState);
   }
 
   login() {
@@ -29,6 +35,9 @@ export class AppComponent {
       console.log(data);
       if(data.user != null){
         this.authenticated=true;
+        this.afAuth.auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(data => {
+          console.log('persistense set');
+        });
       }
     });
   }
@@ -38,5 +47,15 @@ export class AppComponent {
     });
   }
 
-  
+  openSidenav(){
+    this.sidenav.open();
+  }
+
+  close(){
+    this.sidenav.close();
+  }
+
+  cvNotSubmittedTutors(){
+    console.log('cla');
+  }
 }

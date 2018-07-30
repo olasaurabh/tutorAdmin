@@ -4,4 +4,20 @@
 body{
     margin: 0px;
     padding: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+}
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.w100{
+    width: 100%;
 }

@@ -1,10 +1,87 @@
 <div *ngIf="!authenticated">
   jnkfnsdjfs
   <button mat-button (click)="login()">Sign In!</button>
-  
+
 </div>
 
 
-<div *ngIf="authenticated">
-  <button mat-button (click)="logout()">Sign In!</button>
+<div *ngIf="authenticated" class="mainDiv">
+  <mat-toolbar color="primary" class="mainToolbar">
+
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>view_headline</mat-icon>
+    </button>
+    <span class="title">
+      <img class="logoMinImage" src="../assets/logo_min_2.jpg">
+    </span>
+    <span class="title">EduFeat</span>
+
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-container" (backdropClick)="close()">
+    <mat-sidenav class="sidenavBar" #sidenav (keydown.escape)="close()" disableClose>
+      <div class="navbarLogoDiv">
+        <img class="logoImage" src="../assets/logo1.jpg">
+      </div>
+      <hr>
+
+      <div class="navbarContentDiv">
+
+        <button mat-button type="button" class="w100 navbarButtons">
+          <mat-icon class="navbarButtonsIcon">help_outline</mat-icon>
+          CV Not Submitted
+        </button>
+        <button mat-button type="button" class="w100 navbarButtons">
+          <mat-icon class="navbarButtonsIcon">check</mat-icon>
+          CV Submitted</button>
+        <button mat-button type="button" class="w100 navbarButtons">
+          <mat-icon class="navbarButtonsIcon">error</mat-icon>
+          Rejected</button>
+        <button mat-button type="button" class="w100 navbarButtons">
+          <mat-icon class="navbarButtonsIcon">mail</mat-icon>
+          Rejected - MS</button>
+        <button mat-button type="button" class="w100 navbarButtons">
+          <mat-icon class="navbarButtonsIcon">call</mat-icon>
+          Take Interview</button>
+        <button mat-button type="button" class="w100 navbarButtons">
+          <mat-icon class="navbarButtonsIcon">call_missed_outgoing</mat-icon>
+          Call Not Connected</button>
+        <button mat-button type="button" class="w100 navbarButtons">
+          <mat-icon class="navbarButtonsIcon">error</mat-icon>
+          Call Not Connected - MS</button>
+        <button mat-button type="button" class="w100 navbarButtons">
+          <mat-icon class="navbarButtonsIcon">filter_none</mat-icon>
+          Assignment to be Sent</button>
+        <button mat-button type="button" class="w100 navbarButtons">
+          <mat-icon class="navbarButtonsIcon">filter_frames</mat-icon>
+          Assignment Sent</button>
+        <button mat-button type="button" class="w100 navbarButtons">
+          <mat-icon class="navbarButtonsIcon">filter_1</mat-icon>
+          Assignment Received</button>
+        <button mat-button type="button" class="w100 navbarButtons">
+          <mat-icon class="navbarButtonsIcon">file_copy</mat-icon>
+          Send Offer Letter</button>
+        <button mat-button type="button" class="w100 navbarButtons">
+          <mat-icon class="navbarButtonsIcon">list_alt</mat-icon>
+          Offer Letter Sent</button>
+        <button mat-button type="button" class="w100 navbarButtons">
+          <mat-icon class="navbarButtonsIcon">receipt</mat-icon>
+          Offer Letter Received</button>
+        <button mat-button type="button" class="w100 navbarButtons">
+          <mat-icon class="navbarButtonsIcon">group</mat-icon>
+          Whatsapp Group Created</button>
+        <button mat-button type="button" class="w100 navbarButtons">
+          <mat-icon class="navbarButtonsIcon">how_to_reg</mat-icon>
+          Hired</button>
+        <button mat-button type="button" class="w100 navbarButtons">
+          <mat-icon class="navbarButtonsIcon">block</mat-icon>
+          Stopped Working</button>
+
+      </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="mainContent">
+      ,b jhkbjkb
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>

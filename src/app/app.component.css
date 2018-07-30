@@ -1,0 +1,65 @@
+.sidenavBar {
+    width: 304px;
+}
+
+.mainContent {
+    height: 100%;
+    width: 100%;
+}
+
+.mainDiv {
+    height: 100%;
+    width: 100%;
+}
+
+.example-container {
+    top: 56px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+}
+
+.mainToolbar{
+    height: 56px;
+}
+
+.title{
+    margin-left: 16px;
+}
+
+.navbarLogoDiv{
+    padding-left: 50px;
+    padding-right: 50px;
+    
+}
+
+.logoImage{
+    height: auto;
+    width: 200px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.logoMinImage{
+    margin-left: 16px;
+    height: 32px;
+    margin-bottom: 2px;
+}
+
+.navbarContentDiv{
+    padding-top: 50px;
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: right;
+    font-weight: 600;
+
+}
+
+.navbarButtons{
+    text-align: left;
+}
+
+.navbarButtonsIcon{
+    margin-right: 16px;
+}
