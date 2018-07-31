@@ -10,6 +10,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
+import { RouterModule, Routes } from '@angular/router';
 
 //////Angular Material Imports Start
 import { MatCheckboxModule } from '@angular/material';
@@ -42,17 +43,38 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { CvNotSubmittedComponent } from './cv-not-submitted/cv-not-submitted.component';
 //////angular material Import End
+
+import { CvNotSubmittedComponent } from './cv-not-submitted/cv-not-submitted.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+
+const appRoutes: Routes = [
+  {
+    path: 'cvNotSubmitted',
+    component: CvNotSubmittedComponent,
+  },
+  {
+    path: '',
+    redirectTo: '/cvNotSubmitted',
+    pathMatch: 'full'
+  },
+  { path: '**', component: PageNotFoundComponent }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    CvNotSubmittedComponent
+    CvNotSubmittedComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    ),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
