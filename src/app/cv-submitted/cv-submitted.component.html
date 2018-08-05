@@ -1,0 +1,104 @@
+<div *ngIf="tutors?.length > 0; else noTutors">
+  <ul *ngFor="let tutor of tutors" class="collection">
+    <li class="collection-item">
+      <mat-card class="cvSubmittedCard">
+        <div class="mdl-grid mdl-grid--no-spacing" (click)="expandDetails(tutor)">
+          <div class="mdl-cell mdl-cell--6-col fc33">
+            {{tutor.firstName}} {{tutor.lastName}} ({{tutor.gender}})
+          </div>
+          <div class="mdl-cell mdl-cell--6-col fc33">
+            <span class="fc84">Gmail:</span> {{tutor.emailId}}
+          </div>
+          <div class="mdl-cell mdl-cell--6-col fc55">
+            {{tutor.dateApplied | date}}
+          </div>
+          <div class="mdl-cell mdl-cell--6-col fc33">
+            <span class="fc84">Mobile:</span> {{tutor.mobileNumber}}
+          </div>
+        </div>
+        <div class="mar4"></div>
+        <div class="mdl-grid mdl-grid--no-spacing" (click)="expandDetails(tutor)">
+          <div class="mdl-cell mdl-cell--1-col fc84">
+            Education:
+          </div>
+          <div class="mdl-cell mdl-cell--1-col"></div>
+          <div class="mdl-cell mdl-cell--10-col fc33">
+            <b>{{tutor.degree}}</b>, {{tutor.department}} ({{tutor.yearOfPassing}})
+            <br> {{tutor.collegeName}}
+            <br> {{tutor.cgpa}}, {{tutor.currentSemester}}
+          </div>
+        </div>
+        <div class="mar4"></div>
+        <div class="mdl-grid mdl-grid--no-spacing" (click)="expandDetails(tutor)">
+          <div class="mdl-cell mdl-cell--2-col fc84">
+            {{tutor.departmentOfIntrest}}:
+          </div>
+          <div class="mdl-cell mdl-cell--10-col fc33">
+            {{tutor.departmentSubjects}}
+          </div>
+        </div>
+
+        <div class="mdl-grid mdl-grid--no-spacing" (click)="expandDetails(tutor)">
+          <div class="mdl-cell mdl-cell--2-col fc84">
+            Maths:
+          </div>
+          <div class="mdl-cell mdl-cell--10-col fc33">
+            {{tutor.mathsSubjects}}
+          </div>
+        </div>
+
+        <div *ngIf="expandState && tutorToExpand.id == tutor.id">
+          <div class="mdl-grid mdl-grid--no-spacing" (click)="expandDetails(tutor)">
+            <div class="mdl-cell mdl-cell--2-col fc84">
+              Software Subjects:
+            </div>
+            <div class="mdl-cell mdl-cell--10-col fc33">
+              {{tutor.softwareSubjects}}
+            </div>
+          </div>
+
+          <div class="mdl-grid mdl-grid--no-spacing" (click)="expandDetails(tutor)">
+            <div class="mdl-cell mdl-cell--2-col fc84">
+              Other Subjects:
+            </div>
+            <div class="mdl-cell mdl-cell--10-col fc33">
+              {{tutor.otherSubjects}}
+            </div>
+          </div>
+          <div class="mar4"></div>
+          <div class="mdl-grid mdl-grid--no-spacing" (click)="expandDetails(tutor)">
+            <div class="mdl-cell mdl-cell--2-col fc84">
+              Experience (if any):
+            </div>
+            <div class="mdl-cell mdl-cell--10-col fc33">
+              {{tutor.experience}}
+            </div>
+          </div>
+
+          <div class="mdl-grid mdl-grid--no-spacing" (click)="expandDetails(tutor)">
+            <div class="mdl-cell mdl-cell--2-col fc84">
+              Why do you want to join:
+            </div>
+            <div class="mdl-cell mdl-cell--10-col fc33">
+              {{tutor.whyDoYouWantToJoin}}
+            </div>
+          </div>
+
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col">
+              <div class="buttonDiv">
+                <button mat-stroked-button class="acceptButton" color="primary" (click)="applicationAccepted(tutor)">Accept</button>
+                <button mat-stroked-button class="rejectButton" color="warn" (click)="applicationRejected(tutor)">Reject</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noTutors>
+  <hr>
+  <h5>There are no tutors to show</h5>
+</ng-template>

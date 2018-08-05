@@ -1,0 +1,68 @@
+.tableFilteringFormField {
+    width: 64%;
+    height: 56px;
+    margin: 8px;
+}
+
+.cvNotSubmittedTableDiv {
+    top: 128px;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    overflow: scroll;
+}
+
+.tableHeaderRow {
+    position: fixed;
+    top: 128px;
+}
+
+.mat-table {
+    word-wrap: break-word;
+}
+
+.mat-column-name {
+    min-width: 104px;
+    max-width: 104px;
+}
+
+.mat-column-date {
+    min-width: 88px;
+    max-width: 88px;
+}
+
+.mat-column-email {
+    min-width: 104px;
+    max-width: 104px;
+}
+
+.mat-column-phoneNumber {
+    min-width: 144px;
+    max-width: 144px;
+}
+
+.mat-column-query {
+    min-width: 440px;
+    max-width: 440px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.cvSubmittedCard{
+    width: 90%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.acceptButton{
+margin-right: 16px;
+}
+
+.rejectButton{
+    margin-left: 16px;
+}
+
+.buttonDiv{
+    float: right;
+}

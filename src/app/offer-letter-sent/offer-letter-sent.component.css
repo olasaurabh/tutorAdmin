@@ -1,0 +1,25 @@
+ul {
+    list-style-type: none;
+}
+
+.cvSubmittedCard{
+    width: 90%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.acceptButton{
+margin-right: 16px;
+margin-left: 16px;
+}
+
+.rejectButton{
+    margin-left: 16px;
+}
+
+.buttonDiv{
+    float: right;
+}
+
+.edit_icon{
+    float: right;
+}

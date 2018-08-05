@@ -12,6 +12,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { RouterModule, Routes } from '@angular/router';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 //////Angular Material Imports Start
 import { MatCheckboxModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
@@ -47,12 +49,58 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { CvNotSubmittedComponent } from './cv-not-submitted/cv-not-submitted.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CvSubmittedComponent } from './cv-submitted/cv-submitted.component';
+import { ChangeStatusDialogComponent } from './change-status-dialog/change-status-dialog.component';
+import { TakeInterviewComponent } from './take-interview/take-interview.component';
+import { RejectDialogComponent } from './reject-dialog/reject-dialog.component';
+import { AssignmentToBeSentDialogComponent } from './assignment-to-be-sent-dialog/assignment-to-be-sent-dialog.component';
+import { CallNotConnectedComponent } from './call-not-connected/call-not-connected.component';
+import { AssignmentToBeSentComponent } from './assignment-to-be-sent/assignment-to-be-sent.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { AssignmentSentComponent } from './assignment-sent/assignment-sent.component';
+import { AssignmentReceivedComponent } from './assignment-received/assignment-received.component';
+import { SendOfferLetterDialogComponent } from './send-offer-letter-dialog/send-offer-letter-dialog.component';
+import { OfferLetterSentComponent } from './offer-letter-sent/offer-letter-sent.component';
+import { GmailFilterPipe } from './pipes/gmail-filter.pipe';
+import { SendOfferLetterComponent } from './send-offer-letter/send-offer-letter.component';
 
 
 const appRoutes: Routes = [
   {
     path: 'cvNotSubmitted',
     component: CvNotSubmittedComponent,
+  },
+  {
+    path: 'cvSubmitted',
+    component: CvSubmittedComponent,
+  },
+  {
+    path: 'takeInterview',
+    component: TakeInterviewComponent,
+  },
+  {
+    path: 'callNotConnected',
+    component: CallNotConnectedComponent,
+  },
+  {
+    path: 'assignmentToBeSent',
+    component: AssignmentToBeSentComponent,
+  },
+  {
+    path: 'assignmentSent',
+    component: AssignmentSentComponent,
+  },
+  {
+    path: 'assignmentReceived',
+    component: AssignmentReceivedComponent,
+  },
+  {
+    path: 'sendOfferLetter',
+    component: SendOfferLetterComponent,
+  },
+  {
+    path: 'offerLetterSent',
+    component: OfferLetterSentComponent,
   },
   {
     path: '',
@@ -66,7 +114,22 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     CvNotSubmittedComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CvSubmittedComponent,
+    ChangeStatusDialogComponent,
+    TakeInterviewComponent,
+    RejectDialogComponent,
+    AssignmentToBeSentDialogComponent,
+    CallNotConnectedComponent,
+    AssignmentToBeSentComponent,
+    FilterPipe,
+    AssignmentSentComponent,
+    AssignmentReceivedComponent,
+    SendOfferLetterDialogComponent,
+    OfferLetterSentComponent,
+    GmailFilterPipe,
+    SendOfferLetterComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -79,6 +142,9 @@ const appRoutes: Routes = [
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
+
+    FormsModule,
+    ReactiveFormsModule,
 
     //////Angular Material Imports Start
     MatCheckboxModule,
@@ -116,7 +182,13 @@ const appRoutes: Routes = [
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    ChangeStatusDialogComponent,
+    RejectDialogComponent,
+    AssignmentToBeSentDialogComponent,
+    SendOfferLetterDialogComponent
+  ]
 })
 export class AppModule {
 

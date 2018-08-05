@@ -1,0 +1,67 @@
+<div class="filter" matSort (matSortChange)="sortData($event)">
+  <mat-form-field class="w100" class="example-full-width">
+    <input matInput placeholder="Favorite food" [formControl]=subject>
+  </mat-form-field>
+  <button mat-button style="margin-left: 32px;">
+    <span mat-sort-header="subjectAssigned">Sort Subjects</span>
+  </button>
+</div>
+<div *ngIf="sortedData?.length > 0; else noTutors">
+  <ul *ngFor="let tutor of sortedData | filter: filterargs" class="collection">
+    <li class="collection-item">
+      <mat-card class="cvSubmittedCard">
+
+        <div class="mdl-grid mdl-grid--no-spacing" (click)="expandDetails(tutor)">
+          <div class="mdl-cell mdl-cell--6-col fc33">
+            {{tutor.firstName}} {{tutor.lastName}} ({{tutor.gender}})
+          </div>
+          <div class="mdl-cell mdl-cell--6-col fc33">
+            <span class="fc84">Gmail:</span> {{tutor.emailId}}
+          </div>
+          <div class="mdl-cell mdl-cell--6-col fc55">
+            {{tutor.interviewedOn | date}}
+          </div>
+          <div class="mdl-cell mdl-cell--6-col fc33">
+            <span class="fc84">Mobile:</span> {{tutor.mobileNumber}}
+          </div>
+        </div>
+        <div class="mar4"></div>
+        <div class="mdl-grid mdl-grid--no-spacing" (click)="expandDetails(tutor)">
+          <div class="mdl-cell mdl-cell--1-col fc84">
+            Education:
+          </div>
+          <div class="mdl-cell mdl-cell--1-col"></div>
+          <div class="mdl-cell mdl-cell--10-col fc33">
+            <b>{{tutor.degree}}</b>, {{tutor.department}} ({{tutor.yearOfPassing}})
+            <br> {{tutor.collegeName}}
+            <br> {{tutor.cgpa}}, {{tutor.currentSemester}}
+          </div>
+        </div>
+
+        <div class="mdl-grid mdl-grid--no-spacing" (click)="expandDetails(tutor)">
+            <div class="mdl-cell mdl-cell--2-col fc84">
+              Assigned Subject:
+            </div>
+            <div class="mdl-cell mdl-cell--10-col fc33">
+              {{tutor.subjectAssigned}}
+            </div>
+          </div>
+
+        <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--12-col">
+            <span style="font-size: 14px">  </span>
+            <div class="buttonDiv">
+              <button mat-stroked-button class="acceptButton" color="primary" (click)="sendOfferLetter(tutor)">Send Offer Letter</button>
+              <button mat-stroked-button class="acceptButton" color="warn" (click)="reject(tutor)">Reject</button>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noTutors>
+  <hr>
+  <h5>There are no tutors to show</h5>
+</ng-template>

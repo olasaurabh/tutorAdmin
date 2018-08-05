@@ -1,0 +1,10 @@
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+      <mat-form-field class="w100">
+        <input matInput placeholder="Assigned Subject" [formControl]="assignedSubjects">
+      </mat-form-field>
+    </div>
+    <div class="mdl-cell mdl-cell--12-col">
+        <button mat-stroked-button class="rejectButton" color="primary" (click)="sendAssignment()" style="float: right;">Assignment To Be Sent</button>
+    </div>
+  </div>

@@ -1,0 +1,19 @@
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--12-col">
+    <mat-form-field class="w100">
+      <textarea matInput placeholder="Feedback for the Assignment" [formControl]="feedback"></textarea>
+    </mat-form-field>
+  </div>
+</div>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--12-col">
+    <mat-form-field class="w100">
+      <input matInput placeholder="Initial Rating" [formControl]="rating">
+    </mat-form-field>
+  </div>
+</div>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--12-col">
+    <button mat-stroked-button class="rejectButton" color="primary" (click)="sendOfferLetter()" style="float: right;">Send Offer Letter!!</button>
+  </div>
+</div>

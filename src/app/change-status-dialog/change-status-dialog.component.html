@@ -1,0 +1,21 @@
+<div>
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+            <mat-form-field class="w100">
+                <mat-select placeholder="Select Status" [formControl]="newStatus">
+                    <mat-option *ngFor="let status of statuses" [value]="status">
+                        {{status}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--6-col">
+            <button mat-stroked-button color="primary" class="center" (click)="saveStatus()">Change Status</button>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col">
+            <button mat-stroked-button color="primary" class="center" (click)="closeDialog()">Cancel</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--12-col">
+    <mat-form-field class="w100">
+      <mat-select placeholder="Reason for Rejection" [formControl]="rejectedReason">
+        <mat-option *ngFor="let reason of reasons" [value]="reason">
+          {{reason}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="mdl-cell mdl-cell--12-col">
+      <button mat-stroked-button class="rejectButton" color="warn" (click)="rejectTutor()" style="float: right;">Reject</button>
+  </div>
+</div>

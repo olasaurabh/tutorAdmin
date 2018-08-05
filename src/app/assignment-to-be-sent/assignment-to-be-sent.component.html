@@ -1,0 +1,43 @@
+<div class="filter" matSort (matSortChange)="sortData($event)">
+  <mat-form-field class="w100" class="example-full-width">
+    <input matInput placeholder="Favorite food" [formControl]=subject>
+  </mat-form-field>
+  <button mat-button style="margin-left: 32px;"><span mat-sort-header="subjectAssigned">Sort Subjects</span></button>
+</div>
+<div *ngIf="sortedData?.length > 0; else noTutors">
+  <ul *ngFor="let tutor of sortedData | filter: filterargs" class="collection">
+    <li class="collection-item">
+      <mat-card class="cvSubmittedCard">
+
+        <div class="mdl-grid mdl-grid--no-spacing">
+          <div class="mdl-cell mdl-cell--6-col">
+            <b>{{tutor.subjectAssigned}}</b>
+          </div>
+          <div class="mdl-cell mdl-cell--6-col">
+            {{tutor.firstName}} {{tutor.lastName}} ({{tutor.gender}})
+          </div>
+          <div class="mar8"></div>
+          <div class="mdl-cell mdl-cell--6-col">
+            {{tutor.interviewedOn}}
+          </div>
+          <div class="mdl-cell mdl-cell--6-col">
+            {{tutor.emailId}}, {{tutor.mobileNumber}}
+          </div>
+        </div>
+
+        <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--12-col">
+            <div class="buttonDiv">
+              <button mat-stroked-button class="acceptButton" color="primary" (click)="sendAssignment(tutor)">Assignment Sent</button>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noTutors>
+  <hr>
+  <h5>There are no tutors to show</h5>
+</ng-template>

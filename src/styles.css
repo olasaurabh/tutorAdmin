@@ -7,6 +7,7 @@ body{
     height: 100%;
     width: 100%;
     overflow: scroll;
+    font-family: 'Open Sans', sans-serif;
 }
 hr { 
     display: block;
@@ -20,4 +21,24 @@ hr {
 
 .w100{
     width: 100%;
+}
+
+.center{
+    margin: 0 auto;
+}
+
+.fc33{
+    -webkit-text-fill-color: #333333;
+}
+
+.fc55{
+    -webkit-text-fill-color: #555555;
+}
+
+.fc84{
+    -webkit-text-fill-color: #848484
+}
+
+.mar4{
+    margin: 8px;
 }
