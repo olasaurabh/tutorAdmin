@@ -1,0 +1,22 @@
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--12-col">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Tutor Name" [formControl]="tutorName">
+    </mat-form-field>
+  </div>
+</div>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--12-col">
+    <mat-checkbox [formControl]="books">Books Shared</mat-checkbox>
+  </div>
+</div>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--12-col">
+    <mat-checkbox [formControl]="group">Whatsapp Group Created</mat-checkbox>
+  </div>
+</div>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--12-col">
+    <button mat-stroked-button (click)="submitDetails()">Submit</button>
+  </div>
+</div>

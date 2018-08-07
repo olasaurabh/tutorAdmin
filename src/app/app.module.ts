@@ -63,6 +63,9 @@ import { SendOfferLetterDialogComponent } from './send-offer-letter-dialog/send-
 import { OfferLetterSentComponent } from './offer-letter-sent/offer-letter-sent.component';
 import { GmailFilterPipe } from './pipes/gmail-filter.pipe';
 import { SendOfferLetterComponent } from './send-offer-letter/send-offer-letter.component';
+import { OfferLetterReceivedComponent } from './offer-letter-received/offer-letter-received.component';
+import { CreateWhatsappGroupDialogComponent } from './create-whatsapp-group-dialog/create-whatsapp-group-dialog.component';
+import { WhatsappGroupCreatedComponent } from './whatsapp-group-created/whatsapp-group-created.component';
 
 
 const appRoutes: Routes = [
@@ -103,6 +106,14 @@ const appRoutes: Routes = [
     component: OfferLetterSentComponent,
   },
   {
+    path: 'offerLetterReceived',
+    component: OfferLetterReceivedComponent,
+  },
+  {
+    path: 'whatsappGroupCreated',
+    component: WhatsappGroupCreatedComponent,
+  },
+  {
     path: '',
     redirectTo: '/cvNotSubmitted',
     pathMatch: 'full'
@@ -129,6 +140,9 @@ const appRoutes: Routes = [
     OfferLetterSentComponent,
     GmailFilterPipe,
     SendOfferLetterComponent,
+    OfferLetterReceivedComponent,
+    CreateWhatsappGroupDialogComponent,
+    WhatsappGroupCreatedComponent,
     
   ],
   imports: [
@@ -187,7 +201,8 @@ const appRoutes: Routes = [
     ChangeStatusDialogComponent,
     RejectDialogComponent,
     AssignmentToBeSentDialogComponent,
-    SendOfferLetterDialogComponent
+    SendOfferLetterDialogComponent,
+    CreateWhatsappGroupDialogComponent
   ]
 })
 export class AppModule {
